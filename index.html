@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Miswadi Siskandarl — Senior MICE Executive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ========== RESET & BASE ========== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: #080c14;
+  color: #dde1ed;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #0d1117; }
+::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 3px; }
+
+/* ========== VARIABLES ========== */
+:root {
+  --gold: #c9a84c;
+  --gold-l: #e8c96b;
+  --gold-dim: rgba(201,168,76,0.12);
+  --border: rgba(201,168,76,0.18);
+  --bg: #080c14;
+  --bg2: #0d1320;
+  --card: #111827;
+  --text: #dde1ed;
+  --muted: #7b8498;
+}
+
+/* ========== TYPOGRAPHY ========== */
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+/* ========== NAV ========== */
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 1000;
+  padding: 1rem 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+  background: rgba(8,12,20,0.88);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem; font-weight: 700;
+  color: var(--gold); text-decoration: none;
+  letter-spacing: 0.06em;
+}
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  color: var(--muted); text-decoration: none;
+  font-size: 0.8rem; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--gold); }
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  cursor: pointer; background: none; border: none; padding: 4px;
+}
+.hamburger span {
+  display: block; width: 22px; height: 2px;
+  background: var(--gold); border-radius: 2px; transition: all 0.3s;
+}
+
+/* ========== HERO ========== */
+#hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding: 7rem 2rem 4rem;
+  position: relative;
+  background: linear-gradient(135deg, #080c14 0%, #0c1420 60%, #090f1a 100%);
+  overflow: hidden;
+}
+.hero-bg-radial {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse at 25% 50%, rgba(201,168,76,0.045) 0%, transparent 65%),
+    radial-gradient(ellipse at 75% 20%, rgba(30,60,140,0.07) 0%, transparent 60%);
+}
+.hero-grid-lines {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(201,168,76,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.025) 1px, transparent 1px);
+  background-size: 55px 55px;
+}
+.hero-container {
+  max-width: 1180px; margin: 0 auto; width: 100%;
+  display: grid; grid-template-columns: 1fr 1.45fr; gap: 4rem;
+  align-items: center; position: relative; z-index: 1;
+}
+.hero-photo-col { display: flex; flex-direction: column; align-items: center; }
+.photo-ring-wrap {
+  position: relative; width: 280px; height: 280px;
+}
+.photo-ring-wrap::before {
+  content: '';
+  position: absolute; inset: -10px; border-radius: 50%;
+  background: conic-gradient(var(--gold) 0deg, transparent 120deg, var(--gold) 240deg, transparent 300deg, var(--gold) 360deg);
+  animation: spin 12s linear infinite;
+  opacity: 0.7;
+}
+.photo-ring-wrap::after {
+  content: '';
+  position: absolute; inset: -4px; border-radius: 50%;
+  background: var(--bg);
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.hero-photo {
+  position: relative; z-index: 1;
+  width: 100%; height: 100%; border-radius: 50%;
+  object-fit: cover; object-position: center top;
+  border: 3px solid rgba(201,168,76,0.3);
+}
+.hero-status {
+  margin-top: 1.5rem;
+  padding: 0.4rem 1.2rem;
+  background: var(--gold-dim);
+  border: 1px solid var(--border);
+  border-radius: 2rem;
+  font-size: 0.75rem; font-weight: 600;
+  color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.hero-status::before {
+  content: '';
+  display: block; width: 7px; height: 7px; border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 8px #4ade80;
+  animation: blink 2s infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+.hero-eyebrow {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 0.6rem;
+}
+.hero-name {
+  font-size: clamp(2.4rem, 3.8vw, 3.6rem);
+  font-weight: 700; color: #fff; line-height: 1.12; margin-bottom: 0.5rem;
+}
+.hero-name em { color: var(--gold); font-style: normal; }
+.hero-subtitle {
+  font-family: 'Inter', sans-serif; font-size: 0.9rem;
+  font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 1.8rem;
+}
+.hero-intro {
+  font-size: 1rem; color: #8a96ad; line-height: 1.85;
+  margin-bottom: 2rem; max-width: 520px;
+}
+.hero-contacts { display: flex; flex-direction: column; gap: 0.55rem; margin-bottom: 2.2rem; }
+.c-item { display: flex; align-items: center; gap: 0.75rem; }
+.c-icon {
+  width: 30px; height: 30px; flex-shrink: 0;
+  background: var(--gold-dim); border: 1px solid var(--border);
+  border-radius: 7px; display: flex; align-items: center;
+  justify-content: center; font-size: 0.8rem;
+}
+.c-item span, .c-item a {
+  font-size: 0.88rem; color: var(--muted); text-decoration: none; transition: color 0.2s;
+}
+.c-item a:hover { color: var(--gold); }
+.hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-gold {
+  padding: 0.72rem 2rem; background: var(--gold); color: #080c14;
+  border: none; border-radius: 5px; font-family: 'Inter', sans-serif;
+  font-size: 0.88rem; font-weight: 700; letter-spacing: 0.04em;
+  text-decoration: none; cursor: pointer; transition: all 0.2s;
+}
+.btn-gold:hover { background: var(--gold-l); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(201,168,76,0.28); }
+.btn-outline {
+  padding: 0.72rem 2rem; background: transparent;
+  border: 1px solid var(--gold); color: var(--gold);
+  border-radius: 5px; font-family: 'Inter', sans-serif;
+  font-size: 0.88rem; font-weight: 600; letter-spacing: 0.04em;
+  text-decoration: none; cursor: pointer; transition: all 0.2s;
+}
+.btn-outline:hover { background: var(--gold-dim); transform: translateY(-2px); }
+
+/* ========== STATS BAND ========== */
+#stats {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 3.5rem 2rem;
+}
+.stats-inner {
+  max-width: 1180px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem;
+}
+.stat-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 14px; padding: 2rem 1.2rem; text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.stat-card:hover { transform: translateY(-5px); box-shadow: 0 14px 40px rgba(0,0,0,0.35); }
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.2rem; font-weight: 700; color: var(--gold); line-height: 1;
+  margin-bottom: 0.4rem;
+}
+.stat-sfx { font-size: 2rem; color: var(--gold-l); }
+.stat-lbl { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; }
+
+/* ========== SECTION SHELLS ========== */
+.sec { padding: 5.5rem 2rem; max-width: 1180px; margin: 0 auto; }
+.sec-full { padding: 5.5rem 2rem; }
+.sec-inner { max-width: 1180px; margin: 0 auto; }
+.sec-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+.divider { width: 52px; height: 3px; background: var(--gold); border-radius: 2px; margin-bottom: 1.4rem; }
+.sec-title { font-size: clamp(1.8rem, 2.8vw, 2.6rem); color: #fff; line-height: 1.2; margin-bottom: 0.8rem; }
+.sec-body { color: var(--muted); max-width: 580px; margin-bottom: 2.5rem; font-size: 0.95rem; }
+
+/* ========== ABOUT ========== */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+.about-text p { color: #8a96ad; margin-bottom: 1.1rem; line-height: 1.9; font-size: 0.97rem; }
+.comp-title { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+.comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+.comp-tag {
+  padding: 0.55rem 0.8rem;
+  background: var(--gold-dim); border: 1px solid var(--border);
+  border-radius: 6px; font-size: 0.78rem; color: var(--text);
+  display: flex; align-items: center; gap: 0.4rem;
+}
+.comp-tag::before { content: '▸'; color: var(--gold); font-size: 0.65rem; }
+
+/* ========== SKILLS ========== */
+#skills { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.radar-wrap { display: flex; justify-content: center; }
+canvas#radarChart { max-width: 100%; height: auto; }
+.skill-bars { display: flex; flex-direction: column; gap: 1rem; }
+.sbar { display: flex; flex-direction: column; gap: 0.4rem; }
+.sbar-head { display: flex; justify-content: space-between; font-size: 0.83rem; }
+.sbar-name { color: var(--text); font-weight: 500; }
+.sbar-pct { color: var(--gold); font-weight: 600; }
+.sbar-track { height: 5px; background: rgba(255,255,255,0.05); border-radius: 3px; overflow: hidden; }
+.sbar-fill {
+  height: 100%; width: 0%;
+  background: linear-gradient(90deg, var(--gold), var(--gold-l));
+  border-radius: 3px;
+  transition: width 1.6s cubic-bezier(0.16,1,0.3,1);
+}
+
+/* ========== TIMELINE ========== */
+.timeline-wrap { max-width: 860px; margin: 0 auto; }
+.year-display { text-align: center; margin-bottom: 1.8rem; }
+.year-number { font-family: 'Playfair Display', serif; font-size: 4.5rem; font-weight: 700; color: var(--gold); line-height: 1; }
+.year-lbl { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-top: 0.2rem; }
+.slider-wrap { margin: 1.5rem 0 0.8rem; position: relative; }
+input#careerSlider {
+  -webkit-appearance: none;
+  width: 100%; height: 4px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 2px; outline: none; cursor: pointer;
+}
+input#careerSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--gold); cursor: pointer;
+  box-shadow: 0 0 0 4px rgba(201,168,76,0.2), 0 0 18px rgba(201,168,76,0.5);
+  transition: box-shadow 0.2s;
+}
+input#careerSlider::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 0 7px rgba(201,168,76,0.25), 0 0 28px rgba(201,168,76,0.65);
+}
+input#careerSlider::-moz-range-thumb {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--gold); border: none; cursor: pointer;
+  box-shadow: 0 0 16px rgba(201,168,76,0.5);
+}
+.tl-dots { display: flex; justify-content: space-between; padding: 0 11px; margin-bottom: 1.5rem; }
+.tl-dot { display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; }
+.tl-dot-circle { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.12); transition: all 0.3s; }
+.tl-dot.active .tl-dot-circle { background: var(--gold); box-shadow: 0 0 8px rgba(201,168,76,0.6); transform: scale(1.5); }
+.tl-dot-yr { font-size: 0.62rem; color: var(--muted); }
+.tl-dot.active .tl-dot-yr { color: var(--gold); font-weight: 600; }
+
+.career-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 16px; padding: 2.4rem;
+  position: relative; overflow: hidden;
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+.career-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--gold) 0%, transparent 80%);
+}
+.cc-period {
+  display: inline-block; padding: 0.28rem 0.8rem;
+  background: var(--gold-dim); border: 1px solid var(--border);
+  border-radius: 4px; font-size: 0.72rem; color: var(--gold);
+  font-weight: 600; letter-spacing: 0.1em; margin-bottom: 1rem;
+}
+.cc-role { font-family: 'Playfair Display', serif; font-size: 1.55rem; color: #fff; line-height: 1.25; margin-bottom: 0.35rem; }
+.cc-company { font-size: 0.98rem; color: var(--gold); font-weight: 600; margin-bottom: 0.25rem; }
+.cc-loc { font-size: 0.82rem; color: var(--muted); margin-bottom: 1.2rem; }
+.cc-desc { font-size: 0.93rem; color: #8a96ad; line-height: 1.85; }
+.cc-nav { display: flex; justify-content: center; gap: 1rem; margin-top: 1.8rem; }
+.cc-btn {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--gold-dim); border: 1px solid var(--border);
+  color: var(--gold); cursor: pointer; font-size: 1rem;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+}
+.cc-btn:hover { background: var(--gold); color: #080c14; }
+.cc-counter { font-size: 0.78rem; color: var(--muted); display: flex; align-items: center; }
+
+/* ========== ACHIEVEMENTS ========== */
+#achievements { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.ach-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.4rem; }
+.ach-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 13px; padding: 1.8rem;
+  transition: transform 0.28s, border-color 0.28s, box-shadow 0.28s;
+}
+.ach-card:hover { transform: translateY(-5px); border-color: rgba(201,168,76,0.38); box-shadow: 0 14px 40px rgba(0,0,0,0.3); }
+.ach-icon { width: 46px; height: 46px; background: var(--gold-dim); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1rem; }
+.ach-title { font-size: 0.98rem; font-weight: 600; color: #fff; margin-bottom: 0.5rem; line-height: 1.35; }
+.ach-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.75; }
+
+/* ========== PROJECTS ========== */
+.proj-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.9rem; }
+.proj-tag {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 8px; padding: 0.85rem 1rem;
+  transition: all 0.2s; cursor: default;
+}
+.proj-tag:hover { border-color: rgba(201,168,76,0.38); color: var(--gold); background: var(--gold-dim); }
+.proj-name { font-size: 0.84rem; color: var(--text); font-weight: 500; line-height: 1.4; }
+.proj-loc { font-size: 0.74rem; color: var(--muted); margin-top: 0.2rem; }
+
+/* ========== EDUCATION ========== */
+#education { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+.edu-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-left: 3px solid var(--gold); border-radius: 10px;
+  padding: 1.3rem 1.4rem; margin-bottom: 0.9rem;
+}
+.edu-deg { font-size: 0.93rem; font-weight: 600; color: #fff; margin-bottom: 0.25rem; }
+.edu-school { font-size: 0.82rem; color: var(--gold); margin-bottom: 0.15rem; }
+.edu-yr { font-size: 0.78rem; color: var(--muted); }
+.cert-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 10px; padding: 1.1rem 1.3rem;
+  display: flex; gap: 0.9rem; align-items: flex-start;
+  margin-bottom: 0.75rem; transition: border-color 0.2s;
+}
+.cert-card:hover { border-color: rgba(201,168,76,0.35); }
+.cert-ico { font-size: 1.4rem; flex-shrink: 0; }
+.cert-ttl { font-size: 0.88rem; font-weight: 600; color: #fff; margin-bottom: 0.2rem; }
+.cert-org { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+
+/* ========== CONTACT ========== */
+#contact { padding: 5.5rem 2rem; }
+.contact-wrap { max-width: 720px; margin: 0 auto; text-align: center; }
+.contact-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 20px; padding: 3.5rem 3rem;
+  position: relative; overflow: hidden;
+}
+.contact-card::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.contact-card h2 { font-size: 2rem; color: #fff; margin-bottom: 0.7rem; line-height: 1.25; }
+.contact-card > p { color: var(--muted); margin-bottom: 2.5rem; font-size: 0.95rem; }
+.cd-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; text-align: left; margin-bottom: 2.2rem; }
+.cd-item { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.2rem; }
+.cd-lbl { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--muted); margin-bottom: 0.3rem; font-weight: 500; }
+.cd-val { font-size: 0.88rem; color: var(--text); font-weight: 500; }
+.cd-val a { color: var(--gold); text-decoration: none; }
+.cd-val a:hover { text-decoration: underline; }
+.cd-val.avail { color: #4ade80; }
+
+/* ========== FOOTER ========== */
+footer {
+  padding: 2rem; text-align: center;
+  border-top: 1px solid var(--border);
+  color: var(--muted); font-size: 0.78rem;
+  background: var(--bg2);
+}
+footer em { color: var(--gold); font-style: normal; }
+
+/* ========== FADE-IN ========== */
+.fi { opacity: 0; transform: translateY(18px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.fi.vis { opacity: 1; transform: translateY(0); }
+
+/* ========== MOBILE ========== */
+@media (max-width: 900px) {
+  .ach-grid { grid-template-columns: 1fr 1fr; }
+  .edu-grid { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed; top: 58px; left: 0; right: 0;
+    background: rgba(8,12,20,0.97); backdrop-filter: blur(18px);
+    flex-direction: column; padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border);
+    display: none;
+  }
+  .nav-links.open { display: flex; }
+  .hamburger { display: flex; }
+  .hero-container { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
+  .photo-ring-wrap { width: 200px; height: 200px; margin: 0 auto; }
+  .hero-intro { margin: 0 auto 1.8rem; }
+  .hero-contacts { align-items: center; }
+  .hero-cta { justify-content: center; }
+  .stats-inner { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .about-grid { grid-template-columns: 1fr; }
+  .ach-grid { grid-template-columns: 1fr; }
+  .proj-grid { grid-template-columns: 1fr 1fr; }
+  .cd-grid { grid-template-columns: 1fr; }
+  .contact-card { padding: 2.2rem 1.5rem; }
+  .tl-dots { display: none; }
+  .career-card { padding: 1.6rem; }
+  .cc-role { font-size: 1.25rem; }
+}
+@media (max-width: 480px) {
+  .proj-grid { grid-template-columns: 1fr; }
+  .stats-inner { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav>
+  <a href="#hero" class="nav-logo">M·S</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#timeline">Career</a></li>
+    <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="hero">
+  <div class="hero-bg-radial"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-container">
+    <div class="hero-photo-col">
+      <div class="photo-ring-wrap">
+        <img class="hero-photo" src="MS profile pic.jpg" alt="Miswadi Siskandarl">
+      </div>
+      <div class="hero-status">Open to Opportunities</div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Senior Executive Profile · Singapore</p>
+      <h1 class="hero-name">Miswadi<br><em>Siskandarl</em></h1>
+      <p class="hero-subtitle">MICE &nbsp;·&nbsp; Experiential Marketing &nbsp;·&nbsp; Strategic Leadership</p>
+      <p class="hero-intro">Architect-trained executive with 35+ years of global leadership across exhibitions, events, and experiential marketing. Former CEO. Market pioneer in Bahrain and Saudi Arabia. Now back in Singapore, ready to create the next extraordinary chapter.</p>
+      <div class="hero-contacts">
+        <div class="c-item">
+          <div class="c-icon">📞</div>
+          <a href="tel:+6589181188">+65 8918 1188</a>
+        </div>
+        <div class="c-item">
+          <div class="c-icon">✉️</div>
+          <a href="mailto:miswadi888@gmail.com">miswadi888@gmail.com</a>
+        </div>
+        <div class="c-item">
+          <div class="c-icon">📍</div>
+          <span>Tampines, Singapore 520864</span>
+        </div>
+      </div>
+      <div class="hero-cta">
+        <a href="#contact" class="btn-gold">Get in Touch</a>
+        <a href="#timeline" class="btn-outline">Explore Career</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<div id="stats">
+  <div class="stats-inner">
+    <div class="stat-card fi">
+      <div class="stat-num"><span class="cnt" data-t="35">0</span><span class="stat-sfx">+</span></div>
+      <div class="stat-lbl">Years of Experience</div>
+    </div>
+    <div class="stat-card fi">
+      <div class="stat-num"><span class="cnt" data-t="40">0</span><span class="stat-sfx">+</span></div>
+      <div class="stat-lbl">Countries Operated</div>
+    </div>
+    <div class="stat-card fi">
+      <div class="stat-num"><span class="cnt" data-t="1000">0</span><span class="stat-sfx">+</span></div>
+      <div class="stat-lbl">Major Projects Delivered</div>
+    </div>
+    <div class="stat-card fi">
+      <div class="stat-num"><span class="cnt" data-t="3">0</span></div>
+      <div class="stat-lbl">Offices Built from Scratch</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ABOUT ===== -->
+<section class="sec" id="about">
+  <div class="sec-label">About Me</div>
+  <div class="divider"></div>
+  <div class="about-grid">
+    <div class="about-text fi">
+      <h2 class="sec-title">Turning Vision Into<br>Memorable Moments</h2>
+      <p>I'm a strategic, people-centric executive with 35+ years spanning MICE, experiential marketing, exhibitions, and the built environment — across Singapore, Bahrain, Saudi Arabia, Kuwait, and Europe.</p>
+      <p>Trained as an architect at NUS, I bring a rare fusion of creative vision, operational rigour, and commercial acumen. I've built three offices from the ground up, led C-suite functions, and delivered landmark projects for Saudi Aramco, Gulf Air, KAUST, national governments, and global brands.</p>
+      <p>Now back home in Singapore after two decades in the Middle East, I'm seeking my next leadership role — in MICE, events, business development, or executive management — where world-class experience meets new ambition.</p>
+    </div>
+    <div class="fi" style="transition-delay:0.15s">
+      <p class="comp-title">Core Competencies</p>
+      <div class="comp-grid">
+        <div class="comp-tag">Strategic Leadership</div>
+        <div class="comp-tag">Business Development</div>
+        <div class="comp-tag">Stakeholder Engagement</div>
+        <div class="comp-tag">Creative Direction</div>
+        <div class="comp-tag">Project Management</div>
+        <div class="comp-tag">Financial Oversight</div>
+        <div class="comp-tag">Contracts Negotiation</div>
+        <div class="comp-tag">Sales &amp; Marketing</div>
+        <div class="comp-tag">Team Leadership</div>
+        <div class="comp-tag">Crisis Management</div>
+        <div class="comp-tag">Operational Excellence</div>
+        <div class="comp-tag">Talent Development</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SKILLS RADAR ===== -->
+<div id="skills" class="sec-full">
+  <div class="sec-inner">
+    <div class="skills-grid">
+      <div class="radar-wrap fi">
+        <canvas id="radarChart" width="440" height="440"></canvas>
+      </div>
+      <div class="fi" style="transition-delay:0.2s">
+        <p class="sec-label">Professional Skills</p>
+        <div class="divider"></div>
+        <h2 class="sec-title">A Multi-Dimensional<br>Executive</h2>
+        <p class="sec-body">Three decades of cross-functional leadership have sharpened a rare skill set spanning creative, commercial, and operational domains.</p>
+        <div class="skill-bars">
+          <div class="sbar"><div class="sbar-head"><span class="sbar-name">Event &amp; Exhibition Management</span><span class="sbar-pct">98%</span></div><div class="sbar-track"><div class="sbar-fill" data-w="98"></div></div></div>
+          <div class="sbar"><div class="sbar-head"><span class="sbar-name">Strategic Leadership &amp; Vision</span><span class="sbar-pct">95%</span></div><div class="sbar-track"><div class="sbar-fill" data-w="95"></div></div></div>
+          <div class="sbar"><div class="sbar-head"><span class="sbar-name">Business Development</span><span class="sbar-pct">92%</span></div><div class="sbar-track"><div class="sbar-fill" data-w="92"></div></div></div>
+          <div class="sbar"><div class="sbar-head"><span class="sbar-name">Project Management (PMP)</span><span class="sbar-pct">92%</span></div><div class="sbar-track"><div class="sbar-fill" data-w="92"></div></div></div>
+          <div class="sbar"><div class="sbar-head"><span class="sbar-name">Stakeholder Engagement</span><span class="sbar-pct">90%</span></div><div class="sbar-track"><div class="sbar-fill" data-w="90"></div></div></div>
+          <div class="sbar"><div class="sbar-head"><span class="sbar-name">Creative Direction &amp; Design</span><span class="sbar-pct">85%</span></div><div class="sbar-track"><div class="sbar-fill" data-w="85"></div></div></div>
+          <div class="sbar"><div class="sbar-head"><span class="sbar-name">Financial &amp; Commercial Management</span><span class="sbar-pct">82%</span></div><div class="sbar-track"><div class="sbar-fill" data-w="82"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CAREER TIMELINE ===== -->
+<section class="sec" id="timeline">
+  <div class="sec-label">Career Journey</div>
+  <div class="divider"></div>
+  <h2 class="sec-title">35 Years. 5 Countries.<br>One Consistent Standard of Excellence.</h2>
+  <p class="sec-body">Drag the slider — or use the arrows — to journey through a career that spans Singapore's exhibition halls to the palaces of the Middle East.</p>
+  <div class="timeline-wrap">
+    <div class="year-display">
+      <div class="year-number" id="yearDisplay">1988</div>
+      <div class="year-lbl">Career Year</div>
+    </div>
+    <div class="slider-wrap">
+      <input type="range" id="careerSlider" min="0" max="8" value="8" step="1">
+    </div>
+    <div class="tl-dots" id="tlDots"></div>
+    <div class="career-card" id="careerCard"></div>
+    <div class="cc-nav">
+      <button class="cc-btn" id="prevBtn" title="Previous">&#8592;</button>
+      <span class="cc-counter" id="ccCounter">1 / 9</span>
+      <button class="cc-btn" id="nextBtn" title="Next">&#8594;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ACHIEVEMENTS ===== -->
+<div id="achievements" class="sec-full">
+  <div class="sec-inner">
+    <div class="sec-label">Key Achievements</div>
+    <div class="divider"></div>
+    <h2 class="sec-title" style="margin-bottom:2.5rem">Highlights of a Global Career</h2>
+    <div class="ach-grid">
+      <div class="ach-card fi">
+        <div class="ach-icon">🌍</div>
+        <div class="ach-title">Pioneer Market Entries</div>
+        <div class="ach-desc">Set up and grew Pico International's offices in Bahrain (1999) and Saudi Arabia (2011) from ground zero, building fully operational regional businesses that became market leaders.</div>
+      </div>
+      <div class="ach-card fi" style="transition-delay:0.1s">
+        <div class="ach-icon">🏛️</div>
+        <div class="ach-title">Government &amp; Royal Projects</div>
+        <div class="ach-desc">Delivered landmark projects for Saudi Aramco, Ministry of National Guard, KAUST, national tourism boards, and Faalyat — a royal-backed Bahraini events company.</div>
+      </div>
+      <div class="ach-card fi" style="transition-delay:0.2s">
+        <div class="ach-icon">🎮</div>
+        <div class="ach-title">Flagship Events Execution</div>
+        <div class="ach-desc">Successfully executed Gamers8 International Gaming Festival and World Defense Exhibition in Riyadh — large-scale events of national and international significance.</div>
+      </div>
+      <div class="ach-card fi" style="transition-delay:0.1s">
+        <div class="ach-icon">🏗️</div>
+        <div class="ach-title">Founder &amp; Managing Director</div>
+        <div class="ach-desc">Founded Chroma3 Creative WLL in Bahrain in 2017, building a multidisciplinary consultancy from startup to an established regional brand.</div>
+      </div>
+      <div class="ach-card fi" style="transition-delay:0.2s">
+        <div class="ach-icon">🏆</div>
+        <div class="ach-title">Award-Winning Excellence</div>
+        <div class="ach-desc">Nationally recognised for architectural design (NUS), Young Scientist of the Year 1979, and Honourable Mention at the Jurong Bird Park Design Competition 1985.</div>
+      </div>
+      <div class="ach-card fi" style="transition-delay:0.3s">
+        <div class="ach-icon">👥</div>
+        <div class="ach-title">People-First Leader</div>
+        <div class="ach-desc">Built and mentored high-performing teams across 5 countries, with a consistent record of developing the next generation of MICE and experiential marketing leaders.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PROJECTS ===== -->
+<section class="sec" id="projects">
+  <div class="sec-label">Notable Projects</div>
+  <div class="divider"></div>
+  <h2 class="sec-title" style="margin-bottom:0.5rem">From Pavilions to Palaces</h2>
+  <p class="sec-body">A selection of landmark projects spanning the GCC, Asia, and Europe.</p>
+  <div class="proj-grid">
+    <div class="proj-tag"><div class="proj-name">Aramco Gulf Operations Pavilion</div><div class="proj-loc">📍 Singapore</div></div>
+    <div class="proj-tag"><div class="proj-name">Ministry of National Guard Saudi Pavilion</div><div class="proj-loc">📍 Riyadh, KSA</div></div>
+    <div class="proj-tag"><div class="proj-name">Gamers8 International Gaming Festival</div><div class="proj-loc">📍 Riyadh, KSA</div></div>
+    <div class="proj-tag"><div class="proj-name">KAUST Groundbreaking Ceremony</div><div class="proj-loc">📍 Jeddah, KSA</div></div>
+    <div class="proj-tag"><div class="proj-name">Saudi Aramco "Feel the Burn" Championship</div><div class="proj-loc">📍 Dhahran, KSA</div></div>
+    <div class="proj-tag"><div class="proj-name">Ironman 70.3 Bahrain Race</div><div class="proj-loc">📍 Bahrain</div></div>
+    <div class="proj-tag"><div class="proj-name">Gulf Air 50th Anniversary Celebration</div><div class="proj-loc">📍 Bahrain</div></div>
+    <div class="proj-tag"><div class="proj-name">GCC Arab Summit</div><div class="proj-loc">📍 Bahrain</div></div>
+    <div class="proj-tag"><div class="proj-name">Bahrain Tourism Pavilion</div><div class="proj-loc">📍 Berlin · Frankfurt · Geneva</div></div>
+    <div class="proj-tag"><div class="proj-name">Camel Museum</div><div class="proj-loc">📍 Riyadh, KSA</div></div>
+    <div class="proj-tag"><div class="proj-name">NWC Water &amp; Electricity Gallery</div><div class="proj-loc">📍 Riyadh, KSA</div></div>
+    <div class="proj-tag"><div class="proj-name">Al Marai Visitor Gallery</div><div class="proj-loc">📍 Riyadh, KSA</div></div>
+    <div class="proj-tag"><div class="proj-name">Kuwait Airways 50th Anniversary</div><div class="proj-loc">📍 Kuwait</div></div>
+    <div class="proj-tag"><div class="proj-name">Singapore–Indonesia Summit &amp; Exhibition</div><div class="proj-loc">📍 Singapore</div></div>
+    <div class="proj-tag"><div class="proj-name">Urban Redevelopment Authority Gallery</div><div class="proj-loc">📍 Singapore</div></div>
+    <div class="proj-tag"><div class="proj-name">Arab International Cybersecurity Exhibition</div><div class="proj-loc">📍 Bahrain</div></div>
+    <div class="proj-tag"><div class="proj-name">Dinosaur Park Touring Exhibition</div><div class="proj-loc">📍 SG · Indonesia · Philippines</div></div>
+    <div class="proj-tag"><div class="proj-name">Bahrain EDB National Pavilion</div><div class="proj-loc">📍 Xiamen, China</div></div>
+  </div>
+</section>
+
+<!-- ===== EDUCATION ===== -->
+<div id="education" class="sec-full">
+  <div class="sec-inner">
+    <div class="sec-label">Education &amp; Credentials</div>
+    <div class="divider"></div>
+    <h2 class="sec-title" style="margin-bottom:2.5rem">Academically Grounded,<br>Professionally Sharpened</h2>
+    <div class="edu-grid">
+      <div>
+        <p class="comp-title">Education</p>
+        <div class="edu-card fi">
+          <div class="edu-deg">Bachelor of Arts (Architecture)</div>
+          <div class="edu-school">National University of Singapore</div>
+          <div class="edu-yr">1984 – 1987</div>
+        </div>
+        <div class="edu-card fi">
+          <div class="edu-deg">Cambridge GCE 'A' Levels</div>
+          <div class="edu-school">St. Andrew's Junior College, Singapore</div>
+          <div class="edu-yr">1979 – 1980</div>
+        </div>
+        <div class="edu-card fi">
+          <div class="edu-deg">Cambridge GCE 'O' Levels</div>
+          <div class="edu-school">Victoria School, Singapore</div>
+          <div class="edu-yr">1975 – 1978</div>
+        </div>
+      </div>
+      <div>
+        <p class="comp-title">Certifications &amp; Honours</p>
+        <div class="cert-card fi"><div class="cert-ico">📋</div><div><div class="cert-ttl">Project Management Professional (PMP)</div><div class="cert-org">Project Management Institute (PMI) · 2021</div></div></div>
+        <div class="cert-card fi"><div class="cert-ico">🤖</div><div><div class="cert-ttl">Advanced Generative AI Techniques</div><div class="cert-org">2025 · AI-driven business innovation &amp; digital transformation</div></div></div>
+        <div class="cert-card fi"><div class="cert-ico">🔄</div><div><div class="cert-ttl">Certified ScrumMaster (CSM) Candidate</div><div class="cert-org">Scrum Alliance · Agile leadership &amp; delivery optimisation</div></div></div>
+        <div class="cert-card fi"><div class="cert-ico">🏅</div><div><div class="cert-ttl">Young Scientist of the Year (Biology)</div><div class="cert-org">Singapore National Science Fair · 1979</div></div></div>
+        <div class="cert-card fi"><div class="cert-ico">🏗️</div><div><div class="cert-ttl">Design Award – Honourable Mention</div><div class="cert-org">Jurong Bird Park Aviary Design Competition · 1985</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CONTACT ===== -->
+<div id="contact">
+  <div class="contact-wrap">
+    <p class="sec-label" style="text-align:center">Get in Touch</p>
+    <div class="divider" style="margin:0.5rem auto 0;"></div>
+    <div class="contact-card" style="margin-top:2rem">
+      <h2>Let's Build Something<br>Extraordinary</h2>
+      <p>Whether you're looking for an executive leader, a MICE industry veteran, or a strategic growth partner — I'd love to connect.</p>
+      <div class="cd-grid">
+        <div class="cd-item"><div class="cd-lbl">Phone</div><div class="cd-val"><a href="tel:+6589181188">+65 8918 1188</a></div></div>
+        <div class="cd-item"><div class="cd-lbl">Email</div><div class="cd-val"><a href="mailto:miswadi888@gmail.com">miswadi888@gmail.com</a></div></div>
+        <div class="cd-item"><div class="cd-lbl">Location</div><div class="cd-val">Tampines, Singapore 520864</div></div>
+        <div class="cd-item"><div class="cd-lbl">Availability</div><div class="cd-val avail">Open to Opportunities</div></div>
+      </div>
+      <a href="mailto:miswadi888@gmail.com" class="btn-gold" style="display:inline-block">Send a Message</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p>© 2026 <em>Miswadi Siskandarl</em>. All rights reserved. &nbsp;·&nbsp; Singapore</p>
+</footer>
+
+<script>
+// ==============================
+// NAV HAMBURGER
+// ==============================
+const ham = document.getElementById('hamburger');
+const nav = document.getElementById('navLinks');
+ham.addEventListener('click', () => nav.classList.toggle('open'));
+nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+
+// ==============================
+// FADE-IN ON SCROLL
+// ==============================
+const fiObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); fiObs.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fi').forEach(el => fiObs.observe(el));
+
+// ==============================
+// STAT COUNTERS
+// ==============================
+function countUp(el, target, duration) {
+  let start = 0;
+  const step = target / (duration / 16);
+  const t = setInterval(() => {
+    start = Math.min(start + step, target);
+    el.textContent = Math.floor(start);
+    if (start >= target) clearInterval(t);
+  }, 16);
+}
+let statsDone = false;
+const statsObs = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting && !statsDone) {
+    statsDone = true;
+    document.querySelectorAll('.cnt').forEach(el => countUp(el, parseInt(el.dataset.t), 1800));
+  }
+}, { threshold: 0.35 });
+statsObs.observe(document.getElementById('stats'));
+
+// ==============================
+// SKILL BARS
+// ==============================
+let barsDone = false;
+const barsObs = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting && !barsDone) {
+    barsDone = true;
+    document.querySelectorAll('.sbar-fill').forEach((b, i) => {
+      setTimeout(() => { b.style.width = b.dataset.w + '%'; }, i * 80);
+    });
+  }
+}, { threshold: 0.25 });
+barsObs.observe(document.getElementById('skills'));
+
+// ==============================
+// RADAR CHART
+// ==============================
+const cvs = document.getElementById('radarChart');
+const ctx = cvs.getContext('2d');
+const skills = [
+  { label: 'Event & Exhibition', value: 0.98 },
+  { label: 'Strategic Leadership', value: 0.95 },
+  { label: 'Project Management', value: 0.92 },
+  { label: 'Business Development', value: 0.90 },
+  { label: 'Stakeholder Engagement', value: 0.90 },
+  { label: 'Team Leadership', value: 0.88 },
+  { label: 'Creative Direction', value: 0.85 },
+  { label: 'Financial Management', value: 0.82 },
+];
+const N = skills.length;
+let rProg = 0, rDone = false;
+
+function drawRadar(p) {
+  const W = cvs.width, H = cvs.height;
+  const cx = W / 2, cy = H / 2;
+  const R = Math.min(W, H) * 0.34;
+  const sa = -Math.PI / 2;
+  const as = (Math.PI * 2) / N;
+  ctx.clearRect(0, 0, W, H);
+
+  // Grid rings
+  for (let r = 1; r <= 5; r++) {
+    ctx.beginPath();
+    for (let i = 0; i < N; i++) {
+      const a = sa + i * as, rad = (R * r) / 5;
+      const x = cx + Math.cos(a) * rad, y = cy + Math.sin(a) * rad;
+      i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+    }
+    ctx.closePath();
+    ctx.strokeStyle = r === 5 ? 'rgba(201,168,76,0.22)' : 'rgba(255,255,255,0.04)';
+    ctx.lineWidth = r === 5 ? 1.5 : 0.8;
+    ctx.stroke();
+  }
+
+  // Axis spokes
+  for (let i = 0; i < N; i++) {
+    const a = sa + i * as;
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
+    ctx.lineTo(cx + Math.cos(a) * R, cy + Math.sin(a) * R);
+    ctx.strokeStyle = 'rgba(255,255,255,0.05)';
+    ctx.lineWidth = 0.8;
+    ctx.stroke();
+  }
+
+  // Filled area
+  ctx.beginPath();
+  for (let i = 0; i < N; i++) {
+    const a = sa + i * as, v = skills[i].value * p;
+    const x = cx + Math.cos(a) * R * v, y = cy + Math.sin(a) * R * v;
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  }
+  ctx.closePath();
+  ctx.fillStyle = 'rgba(201,168,76,0.10)';
+  ctx.fill();
+  ctx.strokeStyle = `rgba(201,168,76,${0.5 + p * 0.4})`;
+  ctx.lineWidth = 2;
+  ctx.stroke();
+
+  // Vertex dots
+  for (let i = 0; i < N; i++) {
+    const a = sa + i * as, v = skills[i].value * p;
+    const x = cx + Math.cos(a) * R * v, y = cy + Math.sin(a) * R * v;
+    ctx.beginPath();
+    ctx.arc(x, y, 3.5, 0, Math.PI * 2);
+    ctx.fillStyle = '#c9a84c';
+    ctx.fill();
+  }
+
+  // Center dot
+  ctx.beginPath();
+  ctx.arc(cx, cy, 3, 0, Math.PI * 2);
+  ctx.fillStyle = 'rgba(201,168,76,0.5)';
+  ctx.fill();
+
+  // Labels
+  ctx.font = '11.5px Inter, sans-serif';
+  for (let i = 0; i < N; i++) {
+    const a = sa + i * as;
+    const lx = cx + Math.cos(a) * (R + 32);
+    const ly = cy + Math.sin(a) * (R + 32);
+    const ad = ((a * 180 / Math.PI) + 360) % 360;
+    ctx.textAlign = (ad > 15 && ad < 165) ? 'left' : (ad > 195 && ad < 345) ? 'right' : 'center';
+    ctx.textBaseline = (ad > 70 && ad < 110) ? 'top' : (ad > 250 && ad < 290) ? 'bottom' : 'middle';
+    ctx.fillStyle = 'rgba(180,188,205,0.82)';
+    ctx.fillText(skills[i].label, lx, ly);
+  }
+}
+
+function animateRadar() {
+  rProg = Math.min(rProg + 0.022, 1);
+  drawRadar(rProg);
+  if (rProg < 1) requestAnimationFrame(animateRadar);
+}
+
+let radarDone = false;
+const radarObs = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting && !radarDone) {
+    radarDone = true;
+    requestAnimationFrame(animateRadar);
+  }
+}, { threshold: 0.25 });
+radarObs.observe(document.getElementById('skills'));
+drawRadar(0);
+
+// ==============================
+// CAREER TIMELINE
+// ==============================
+const careers = [
+  {
+    yr: 1988, years: "1988 – 1989",
+    role: "Project Manager",
+    co: "Kingsmen Exhibit International",
+    loc: "Singapore 🇸🇬",
+    icon: "🎯",
+    desc: "Launched my career in the exhibition industry — managing client relationships, project delivery, design coordination, production planning, and supplier negotiations. Built the foundational skills that would define a 35-year global career."
+  },
+  {
+    yr: 1990, years: "1990 – 1999",
+    role: "Senior Manager / Head of Special Projects",
+    co: "Pico Art International",
+    loc: "Singapore 🇸🇬",
+    icon: "🚀",
+    desc: "Rose through the ranks at one of Asia's leading brand activation companies. Led high-profile mega-projects, international touring exhibitions, and cross-border operations. Promoted to Head of Special Projects in recognition of consistent performance and leadership excellence."
+  },
+  {
+    yr: 1999, years: "1999 – 2011",
+    role: "General Manager",
+    co: "Pico International – Bahrain",
+    loc: "Bahrain 🇧🇭",
+    icon: "🌍",
+    desc: "Founded and built Pico's second Middle East office from the ground up. Over 12 transformative years, established the company as a leading MICE and exhibitions player across the GCC. Grew a multi-disciplinary team and delivered landmark regional and international projects."
+  },
+  {
+    yr: 2011, years: "2011 – 2014",
+    role: "General Manager",
+    co: "Pico International – Saudi Arabia",
+    loc: "Riyadh, Saudi Arabia 🇸🇦",
+    icon: "🏛️",
+    desc: "Established Pico's Saudi Arabia operations — leading full office setup, market entry, and organisational structuring. Delivered large-scale national projects including pavilions for Saudi Aramco, Ministry of National Guard, and the iconic KAUST Groundbreaking Ceremony."
+  },
+  {
+    yr: 2014, years: "2014 – 2017",
+    role: "Executive Director",
+    co: "Adliya Tower Interiors",
+    loc: "Bahrain 🇧🇭",
+    icon: "🏗️",
+    desc: "Pivoted into commercial interior fit-out, providing executive leadership for turnkey project delivery. Directed marketing strategy, business development, and corporate branding across Bahrain and the wider Gulf region."
+  },
+  {
+    yr: 2017, years: "2017 – 2023",
+    role: "Managing Director & Founder",
+    co: "Chroma3 Creative WLL",
+    loc: "Bahrain 🇧🇭",
+    icon: "⭐",
+    desc: "Founded my own multidisciplinary events, exhibitions, and interior fit-out consultancy. Grew Chroma3 from a startup into an established regional player delivering turnkey creative solutions across corporate, government, and institutional sectors."
+  },
+  {
+    yr: 2019, years: "2019 – 2020 (concurrent)",
+    role: "General Manager / Consultant",
+    co: "Performance Riyadah Events (Pico Saudi Arabia)",
+    loc: "Riyadh, Saudi Arabia 🇸🇦",
+    icon: "🔄",
+    desc: "Re-engaged with the Pico Group for Saudi Arabia market expansion. Led business development, client engagement, and creative oversight across major national and commercial projects during a landmark period for the Kingdom."
+  },
+  {
+    yr: 2023, years: "2023 – 2024",
+    role: "Chief Executive Officer",
+    co: "Faalyat Events Management WLL",
+    loc: "Bahrain 🇧🇭",
+    icon: "👑",
+    desc: "Appointed CEO of a royal-backed events management company owned by HH a Prince, son of the King of Bahrain. Led organisational transformation, strategic growth, market positioning, and regional expansion within the MICE sector."
+  },
+  {
+    yr: 2024, years: "2024 – Present",
+    role: "Senior Executive — New Horizons",
+    co: "Singapore-based",
+    loc: "Singapore 🇸🇬",
+    icon: "🏠",
+    desc: "Returning home to Singapore with 35+ years of global MICE expertise, a PMP certification, and a proven track record of C-suite leadership. Actively exploring exciting new opportunities in MICE, event management, business development, and executive leadership — locally and internationally."
+  },
+];
+
+const slider   = document.getElementById('careerSlider');
+const yearDisp = document.getElementById('yearDisplay');
+const card     = document.getElementById('careerCard');
+const dotsWrap = document.getElementById('tlDots');
+const counter  = document.getElementById('ccCounter');
+
+// Build dots
+careers.forEach((c, i) => {
+  const d = document.createElement('div');
+  d.className = 'tl-dot' + (i === 0 ? ' active' : '');
+  d.innerHTML = `<div class="tl-dot-circle"></div><div class="tl-dot-yr">${c.yr}</div>`;
+  d.addEventListener('click', () => { slider.value = i; render(i); });
+  dotsWrap.appendChild(d);
+});
+
+function render(idx) {
+  const c = careers[idx];
+  yearDisp.textContent = c.yr;
+  counter.textContent = `${idx + 1} / ${careers.length}`;
+
+  card.style.opacity = '0';
+  card.style.transform = 'translateY(10px)';
+
+  setTimeout(() => {
+    card.innerHTML = `
+      <div class="cc-period">${c.years}</div>
+      <div class="cc-role">${c.icon} ${c.role}</div>
+      <div class="cc-company">${c.co}</div>
+      <div class="cc-loc">📍 ${c.loc}</div>
+      <div class="cc-desc">${c.desc}</div>
+    `;
+    card.style.opacity = '1';
+    card.style.transform = 'translateY(0)';
+  }, 150);
+
+  // Dots state
+  document.querySelectorAll('.tl-dot').forEach((d, i) => d.classList.toggle('active', i <= idx));
+
+  // Slider track fill
+  const pct = (idx / (careers.length - 1)) * 100;
+  slider.style.background = `linear-gradient(to right, #c9a84c ${pct}%, rgba(255,255,255,0.06) ${pct}%)`;
+}
+
+slider.addEventListener('input', () => render(parseInt(slider.value)));
+document.getElementById('prevBtn').addEventListener('click', () => {
+  const v = Math.max(0, parseInt(slider.value) - 1); slider.value = v; render(v);
+});
+document.getElementById('nextBtn').addEventListener('click', () => {
+  const v = Math.min(careers.length - 1, parseInt(slider.value) + 1); slider.value = v; render(v);
+});
+
+render(8);
+</script>
+</body>
+</html>
