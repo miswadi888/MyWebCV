@@ -583,7 +583,7 @@ footer em { color: var(--gold); font-style: normal; }
       <div class="year-lbl">Career Year</div>
     </div>
     <div class="slider-wrap">
-      <input type="range" id="careerSlider" min="0" max="8" value="8" step="1">
+      <input type="range" id="careerSlider" min="0" max="8" value="0" step="1">
     </div>
     <div class="tl-dots" id="tlDots"></div>
     <div class="career-card" id="careerCard"></div>
@@ -1017,7 +1017,7 @@ document.getElementById('nextBtn').addEventListener('click', () => {
   const v = Math.min(careers.length - 1, parseInt(slider.value) + 1); slider.value = v; render(v);
 });
 
-render(8);
+render(0);
 </script>
 </body>
 </html>
